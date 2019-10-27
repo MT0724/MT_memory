@@ -1,0 +1,8 @@
+#每天进步0.1% vs每天退步0.1%，一年后的对比,假设正常学习一年后可以获取知识为1000
+knowledge=1000
+dayfactor=0.001
+dayup=pow(1+dayfactor,365)*knowledge
+daydown=pow(1-dayfactor,365)*knowledge
+sub_up=abs(dayup-knowledge)
+sub_down=abs(daydown-knowledge)
+print("每天进步0.1%：{:.2f},一年后能多学：{:.2f}的知识\n每天退步0.1%：{:.2f},一年后会少学：{:.2f}的知识".format(dayup,sub_up,daydown,sub_down))
