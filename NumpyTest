@@ -1,0 +1,11 @@
+#取一个数组的边缘四个数
+import numpy as np 
+a=np.arange(18).reshape(3,6)
+print("建立的数组为：")
+print(a)
+print('\n')
+rows=np.array([[0,0],[2,2]])
+cols=np.array([[0,5],[0,5]])
+b=a[rows,cols]
+print("这个数组的四个角的元素分别为：")
+print(b)
