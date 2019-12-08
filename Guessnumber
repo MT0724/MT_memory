@@ -1,0 +1,16 @@
+#利用随机数生成10到100之间的数，猜测这个数字，并在猜的过程中给出提示信息，直到猜对
+from random import randint
+n=randint(10,100)
+print('商品的价格已经产生，请输入10到100之间的价格：')
+flag=False
+while flag==False:
+	guess=eval(input("请输入你要猜的价格："))
+	if guess>n:
+	    print('您猜的价格高了，请重新输入：')
+	elif guess<n:
+		print('您猜的价格低了，请重新输入：')
+	else:
+		print('猜对啦，这个商品的价格为：',guess)
+		flag=1
+else:
+	print('游戏结束！')
