@@ -1,0 +1,22 @@
+#用了4种方法对字符串进行逆序
+def reverseStr1(l):
+	return l[::-1]
+def reverseStr2(l):
+	S=[]
+	for i in range(len(l)-1,-1,-1):
+		S.append(l[i])
+	return ''.join(S)
+def reverseStr3(l):
+	S=list(l)
+	S.reverse()
+	return ''.join(S)
+#递归实现
+def reverseStr4(l):
+	if len(l)<=1:
+		return l
+	return l[-1]+reverseStr4(l[:-1])
+
+l='dgveaw'
+print('逆序前的字符串序列为:',l)
+print('逆序后的字符串序列为：',reverseStr4(l))
+
