@@ -1,0 +1,21 @@
+#利用jieba统计红楼梦中人物出现频率，并输出排名前十
+import jieba
+txt=open("E:\\红楼梦.txt","r",encoding='utf-8').read()
+excludes={"什么","一个","我们","那里","你们","如今","说道","知道","老太太",
+          "起来","姑娘","这里","出来","他们","众人","自己","奶奶","一面","太太",
+          "只见","两个","没有","怎么","不是","不知","这个","听见","这样","进来",
+          "东西","告诉","就是","咱们","袭人","回来","大家","只是","只得","老爷",
+          "丫头","这些","不敢","出去","所以","不过","的话"}
+words=jieba.lcut(txt)
+counts={}
+for word in words:
+	if len(word)!=1:
+		counts[word]=counts.get(word,0)+1
+for word in excludes:
+	del(counts[word])
+listitem=list(counts.items())
+listitem.sort(key=lambda x:x[1],reverse=True)
+print("{0:<10}{1:>8}".format("人物","出场次数"))
+for i in range(10):
+	word,count=listitem[i]
+	print("{0:-<10}{1:->10}".format(word,count))
