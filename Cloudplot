@@ -1,0 +1,15 @@
+#词云生成，利用红楼梦中的词频
+import wordcloud
+from imageio import imread
+import jieba
+import matplotlib.pyplot as plt
+txt=open("E:\\红楼梦.txt","r",encoding='utf-8').read()
+mk=imread("C:\\Users\\ZhangMT\\Pictures\\Saved Pictures\\fig1.jpg")
+words=jieba.lcut(txt)
+words_spilt=" ".join(words)
+my_wordcloud=wordcloud.WordCloud(font_path='simhei.ttf',max_words=100,width=2600,height=1600,\
+	background_color='white',mask=mk)
+my_wordcloud.generate(words_spilt)
+plt.imshow(my_wordcloud)
+plt.axis("off")
+plt.show()
