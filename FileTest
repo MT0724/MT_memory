@@ -1,0 +1,7 @@
+fp = open('E:\\test.txt','w')
+string = input('please input a string :\n')
+string = string.upper()
+fp.write(string)
+fp = open('E:\\test.txt','r')
+print(fp.read())
+fp.close()
